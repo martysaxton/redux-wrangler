@@ -10,19 +10,20 @@ interface MyStore {
 // New up a ReducerRegistry
 const reducerRegistry = new ReducerRegistry<MyStore>()
 
-// ReducerRegistry provides a 'reducer' method that will dispatch an action to one of it's reducers.
+// ReducerRegistry provides a 'reducer' method that will dispatch
+// an action to one of it's reducers.
 const store = createStore(reducerRegistry.reducer, { foo: "a", bar: 2 })
 
-// Now let's define an action.  First an interface for the action itself
+// To define an action, first create an interface:
 interface FooAction {
     newValue: string
 }
 
-
-// Register the reducer:
-// This is the only place you'll use the action's 'type' value ("FOO" in this case), so it's not that important to define a string constant for it.
-// TypeScript strictly enforces all types here in the reducer (store, fooAction, and the return value from the reducer)
-// The return value is a strongly typed action creator function
+// Register the reducer for the action  The return value from registerReducer is
+// the action creation function.  A few noteworthy things here:
+//   * This is the only place you'll ever use the action's 'type' value ("FOO")
+//   * The reducer's arguments and return value are strongly typed
+//   * The action creator function is strongly typed
 const fooActionCreator = reducerRegistry.registerReducer<FooAction>("FOO", (store, fooAction) => {
     return { 
         ...store,
@@ -41,5 +42,5 @@ const fooAction  = fooActionCreator( { newValue: "asdf" } )
 // you can then dispatch the action, and it will get routed to fooActionReducer as expected
 store.dispatch(fooAction)
 
-
+ 
 
