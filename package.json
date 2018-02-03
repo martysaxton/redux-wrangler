@@ -1,0 +1,30 @@
+{
+  "name": "redux-wrangler",
+  "version": "1.0.0",
+  "description": "Helps elinimate boilerplate code while providing typesafe resolvers when using Redux with TypeScript.",
+  "main": "dist/ReducerRegistry.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martysaxton/redux-wrangler.git"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "Marty Saxton",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/martysaxton/redux-wrangler/issues"
+  },
+  "homepage": "https://github.com/martysaxton/redux-wrangler#readme",
+  "devDependencies": {
+    "@types/node": "^9.4.0",
+    "@types/redux": "^3.6.0",
+    "typescript": "^2.7.1"
+  },
+  "dependencies": {
+    "redux": "^3.7.2"
+  }
+}
