@@ -1,8 +1,9 @@
 {
   "name": "redux-wrangler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helps elinimate boilerplate code while providing typesafe resolvers when using Redux with TypeScript.",
   "main": "dist/ReducerRegistry.js",
+  "types": "dist/ReducerRegistry.d.ts",
   "scripts": {
     "test": "jest"
   },
